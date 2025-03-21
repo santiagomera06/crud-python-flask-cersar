@@ -14,9 +14,9 @@ def iniciar():
     Recibe la petición del cliente para mostrar la interfaz de inicio de sesión.
     
     Returns:
-        Renderiza la plantilla "frmIniciarSesion.html" que contiene el formulario de inicio de sesión.
+        Renderiza la plantilla "IniciarSesion.html" que contiene el formulario de inicio de sesión.
     """
-    return render_template("frmIniciarSesion.html")
+    return render_template("IniciarSesion.html")
 
 @app.route("/iniciarSesion", methods=['POST'])
 def iniciarSesion():
@@ -45,15 +45,15 @@ def iniciarSesion():
             else:
                 # Si las credenciales son incorrectas, se muestra un mensaje de error
                 mensaje = "Credenciales no válidas. Verifique"
-                return render_template("frmIniciarSesion.html", mensaje=mensaje)
+                return render_template("IniciarSesion.html", mensaje=mensaje)
         else:
             # Si el método no es POST, se muestra un mensaje indicando que se debe usar el formulario
             mensaje = "Debe primero ingresar sus credenciales desde el formulario"
-            return render_template("frmIniciarSesion.html", mensaje=mensaje)
+            return render_template("IniciarSesion.html", mensaje=mensaje)
     except pymongo.errors.PyMongoError as error:
         # Captura errores relacionados con la base de datos y los muestra como mensaje
         mensaje = str(error)
-        return render_template("frmIniciarSesion.html", mensaje=mensaje)
+        return render_template("IniciarSesion.html", mensaje=mensaje)
 
 @app.route("/salir", methods=['GET'])
 def salir():
@@ -67,4 +67,4 @@ def salir():
     """
     session.clear()  # Elimina todas las variables de sesión
     mensaje = "Ha cerrado la sesión de manera exitosa..."
-    return render_template("frmIniciarSesion.html", mensaje=mensaje)
+    return render_template("IniciarSesion.html", mensaje=mensaje)

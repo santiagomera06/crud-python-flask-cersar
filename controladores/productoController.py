@@ -15,7 +15,7 @@ def inicio():
             return render_template("listarProductos.html", listaProductos=listaProductos) 
         else:
             mensaje="Debe primero iniciar la sesión"
-            return render_template("frmIniciarSesion.html", mensaje=mensaje)
+            return render_template("IniciarSesion.html", mensaje=mensaje)
         
     except pymongo.errors as error:
         mensaje=str(error)
@@ -29,7 +29,7 @@ def agregar():
         if "username" in session:
             if request.method=="GET":
                 producto=None
-                return render_template("frmAgregar.html", producto=producto)            
+                return render_template("Agregar.html", producto=producto)            
                 
             elif(request.method=="POST"):
                 codigo = int(request.form['txtCodigo'])
@@ -56,11 +56,11 @@ def agregar():
                     return redirect("/listarProductos")  
         else:
             mensaje="Debe primero iniciar la sesión"
-            return render_template("frmIniciarSesion.html", mensaje=mensaje)    
+            return render_template("IniciarSesion.html", mensaje=mensaje)    
     except pymongo.errors.PyMongoError as error:
        
         mensaje="Ya existe producto con ese código. Modificar"
-        return render_template("frmAgregar.html", mensaje=mensaje, producto=producto)
+        return render_template("Agregar.html", mensaje=mensaje, producto=producto)
         
         
 @app.route("/editar/<string:id>", methods=['GET', 'POST'])
@@ -74,7 +74,7 @@ def editar(id):
                 #consultar los productos por su id
                 producto = productos.find_one(productoAEditar)
                 if(producto):
-                    return render_template("frmEditar.html", producto=producto)
+                    return render_template("Editar.html", producto=producto)
             elif(request.method=="POST"):
                 codigo = int(request.form['txtCodigo'])
                 nombre = request.form['txtNombre']
@@ -119,7 +119,7 @@ def editar(id):
                         return redirect("/listarProductos")    
         else:
             mensaje="Debe primero iniciar la sesión"
-            return render_template("frmIniciarSesion.html", mensaje=mensaje)           
+            return render_template("IniciarSesion.html", mensaje=mensaje)           
     except pymongo.errors.PyMongoError as error:
         mensaje=str(error)
         mensaje="Ya existe producto con ese código. Modificar"
@@ -129,7 +129,7 @@ def editar(id):
             foto = productos.find_one(productoAEditar)['foto']
             #agregamos al producto el atributo foto
             producto['foto']=foto
-        return render_template("frmEditar.html", mensaje=mensaje, producto=producto)
+        return render_template("Editar.html", mensaje=mensaje, producto=producto)
     
 @app.route("/eliminar/<string:id>", methods=["GET"])
 def eliminar(id):
@@ -156,4 +156,4 @@ def eliminar(id):
                                     listaProductos=listaProductos)
     else:
         mensaje="Debe primero iniciar la sesión"
-        return render_template("frmIniciarSesion.html", mensaje=mensaje)    
+        return render_template("IniciarSesion.html", mensaje=mensaje)    
