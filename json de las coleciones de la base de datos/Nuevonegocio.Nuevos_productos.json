@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "67dd083ae3f399e087757dc7"
+  },
+  "codigo": 1,
+  "nombre": "camisa",
+  "precio": 1111111,
+  "categoria": "Electrodomestico",
+  "foto": "1.jpg"
+},
+{
+  "_id": {
+    "$oid": "67dd8fc640734fdc89531833"
+  },
+  "codigo": 2,
+  "nombre": "lavadora",
+  "precio": 222222,
+  "categoria": "Electrodomestico",
+  "foto": "2.jpg"
+}]

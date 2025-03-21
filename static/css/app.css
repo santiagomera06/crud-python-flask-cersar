@@ -1,0 +1,82 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    font-family: Arial, sans-serif; /* Fuente general */
+}
+
+/* Estilo para las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Estilo para las celdas de la tabla */
+table, th, td {
+    border: 1px solid red; /* Líneas rojas */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo para el encabezado de la tabla */
+th {
+    background-color: #333; /* Fondo oscuro para el encabezado */
+    color: red; /* Texto rojo para el encabezado */
+}
+
+/* Estilo para las filas de la tabla */
+tr:nth-child(even) {
+    background-color: #222; /* Fondo oscuro para filas pares */
+}
+
+tr:nth-child(odd) {
+    background-color: #111; /* Fondo más oscuro para filas impares */
+}
+
+/* Estilo para los botones */
+button {
+    background-color: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: darkred; 
+}
+
+
+form {
+    background-color: #333; 
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+
+input, select {
+    background-color: #222; 
+    color: white; 
+    border: 1px solid red; 
+    padding: 8px;
+    margin: 5px 0;
+}
+
+
+.mensaje {
+    color: red; 
+    margin: 10px 0;
+}
+
+
+a {
+    color: red; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkred; 
+}
