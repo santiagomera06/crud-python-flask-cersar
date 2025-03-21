@@ -13,6 +13,10 @@ app.config["UPLOAD_FOLDER"]="./static/imagenes/"
 uri="mongodb://localhost:27017/"
 #uri remota (aquí cada uno obtiene de acuerdo a su base de datos remota)
 #remplazan <db_username> Y <db_password> en la cadena obtenida
+<<<<<<< HEAD
+=======
+uri="mongodb+srv://santiagomera051:<santiagomera123>@cluster0.fdx1n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+>>>>>>> 45d9a09 (conexion atlas)
 miConexion = MongoClient(uri)
 
 
